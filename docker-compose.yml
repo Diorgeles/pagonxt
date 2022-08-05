@@ -1,0 +1,22 @@
+version: '3'
+services:
+  server:
+    build: .
+    command: yarn start:watch
+    env_file: .env.development
+    ports:
+      - '8080:8080'
+    volumes:
+      - './src:/app/src'
+      - './migrations:/app/migrations'
+      - './tsconfig.json:/app/tsconfig.json'
+      - './nodemon.json:/app/nodemon.json'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:14.1-alpine
+    env_file: .env.development
+    ports:
+      - '5432:5432'
+
