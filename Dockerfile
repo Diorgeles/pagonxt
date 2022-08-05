@@ -1,4 +1,6 @@
 FROM node:14
+# ENV TZ="Europe/Moscow"
+ENV TZ="America/Sao_Paulo"
 
 WORKDIR /app
 

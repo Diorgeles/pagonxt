@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CustomersModule } from 'customers/customers.module';
 
 @Module({
   imports: [
@@ -17,8 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       logger: 'advanced-console',
       synchronize: true,
     }),
+    CustomersModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}

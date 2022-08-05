@@ -1,17 +1,26 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, Column, BeforeInsert, Generated } from 'typeorm';
 import { BaseEntity } from './base.entity';
 
 @Entity('customers')
 export class Customers extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @Column()
+  @Generated('uuid')
   user_id: number;
 
   @Column()
   name: string;
 
-  @Column('date')
-  birth_date: string;
+  @Column({
+    type: 'date',
+  })
+  birth_date: Date;
 
-  @Column('timestamp with time zone')
+  // FIXME: Remover o nullable no ultimo teste
+  @Column({ nullable: true })
   timezone: string;
+
+  @BeforeInsert()
+  async saveTimeZone() {
+    this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
 }
