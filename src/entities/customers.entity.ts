@@ -15,8 +15,7 @@ export class Customers extends BaseEntity {
   })
   birth_date: Date;
 
-  // FIXME: Remover o nullable no ultimo teste
-  @Column({ nullable: true })
+  @Column()
   timezone: string;
 
   @BeforeInsert()
