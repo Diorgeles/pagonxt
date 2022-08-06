@@ -1,0 +1,143 @@
+_type: export
+__export_format: 4
+__export_date: 2022-08-06T01:15:01.691Z
+__export_source: insomnia.desktop.app:v2022.4.2
+resources:
+  - _id: req_8da79384efac4c76bb4fc23deb74143d
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1659737874396
+    created: 1658357395192
+    url: "{{ _.url_base }}/customers"
+    name: customers
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2ZjRlOTZjOGZjODU4OGU2IiwiaWF0IjoxNjU4MzU3ODMzLCJleHAiOjI1MjIzNTc4MzN9.qdF-oCtFZkOzgp-Da71yDPUKb66hS08aHw0__EhWOHs
+      disabled: false
+    metaSortKey: -1651370143215.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_8a83444da3a243e0b6149165f5026536
+    parentId: null
+    modified: 1658357395146
+    created: 1658357395146
+    name: dbc-test.yaml
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_9ea35c1a335148e5a7a14d28ad013b03
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1659747273993
+    created: 1659737483394
+    url: '{{ _.url_base }}/customers?s={"birth_date": "2022-08-05"} '
+    name: buscar aniversario
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_8f98c5afeadb4632b63036d822d0accb
+        name: s
+        value: '{"birth_date": "2022-08-02", "timezone":"America/Sao_Paulo"}'
+        description: ""
+        disabled: true
+        type: text
+        multiline: false
+      - id: pair_c550c4abc7e44bbc88cbce26f3af6d45
+        name: s
+        value: '{"birth_date": "2022-08-02"}'
+        description: ""
+        disabled: true
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2ZjRlOTZjOGZjODU4OGU2IiwiaWF0IjoxNjU4MzU3ODMzLCJleHAiOjI1MjIzNTc4MzN9.qdF-oCtFZkOzgp-Da71yDPUKb66hS08aHw0__EhWOHs
+      disabled: false
+    metaSortKey: -1651348526942.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_02aeab50156b49e39244a96d930af04b
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1659748390936
+    created: 1659722610374
+    url: "{{ _.url_base }}/customers"
+    name: Salvar customer
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Raquel",
+        	"birth_date": "2022-08-05"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a1529aa5be6047d3840e763c22f4dc5c
+    authentication: {}
+    metaSortKey: -1651326910669.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_97afd579da404c3fa1b6997730a17d78
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1658357395149
+    created: 1658357395149
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1651456522576
+    _type: environment
+  - _id: jar_6797de89c78b4c0182738e0f682bd841
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1658357395164
+    created: 1658357395164
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_f24f9226044e4f19901232181320c0d6
+    parentId: wrk_8a83444da3a243e0b6149165f5026536
+    modified: 1658357395272
+    created: 1658357395171
+    fileName: dbc-test.yaml
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_7aa047ed080b40478c021163bfd0213d
+    parentId: env_97afd579da404c3fa1b6997730a17d78
+    modified: 1659613591093
+    created: 1658357395151
+    name: Desenvolvimento
+    data:
+      url_base: http://localhost:8080
+    dataPropertyOrder:
+      "&":
+        - url_base
+    color: "#17b60c"
+    isPrivate: false
+    metaSortKey: 1651456560981
+    _type: environment

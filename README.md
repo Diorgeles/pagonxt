@@ -11,11 +11,20 @@
 
 - O projeto foi desenvolvido sobre o framework NestJS + NestCrud e roda em um container Docker
 
+
+- Ao baixar o projeto basta instalar os pacotes com o comando 
+
+```bash 
+yarn i
+```
+
 - Para executar o sistema basta rodar o comando abaixo
 
 ```bash 
 docker-compose up
 ```
+- Dentro da pasta `/doc` tem um arquivo do insomnia com as rotas utilizadas
+
 ### Observações
 
 - NestCrud faz uma grande abstração das rotas iniciais de um controller, por isso não existe rotas no arquivo `Customers.controller`, eu configurei tudo dentro do decorator @Crud()
