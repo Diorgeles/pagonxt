@@ -2,25 +2,8 @@ import { MigrationInterface, QueryRunner, getRepository } from 'typeorm';
 
 export class AddInitialUser1587325359027 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
-    /* const user = new User();
-    // Basic user information
-    user.name = 'Admin';
-    user.email = 'admin@admin.com';
-    user.password = 'admin';
-    user.isAdmin = true;
-
-    if (
-      !(await getRepository('users').findOne({
-        where: {
-          email: 'admin@admin.com',
-        },
-      }))
-    ) {
-      await getRepository('users').save(user);
-    } */
+    // A ideia era fazer um modulo de login, mas não tive tempo
   }
 
-  public async down(queryRunner: QueryRunner): Promise<any> {
-    // await getRepository('users').delete({ email: 'admin@admin.com' });
-  }
+  public async down(queryRunner: QueryRunner): Promise<any> {}
 }
